@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equilíbrio Hormonal · Dr. Alceu Muritiba · Nutrólogo Salvador</title>
+  <meta name="description" content="Avaliação hormonal completa com acompanhamento médico individualizado. Menopausa, andropausa, TPM, disposição e bem-estar. Dr. Alceu Muritiba — Salvador, BA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde: #1a2e20;
+      --verde-mid: #243d2b;
+      --gold: #C9A96E;
+      --gold-light: #e0c28a;
+      --creme: #F7F3ED;
+      --creme-dark: #ede8e0;
+      --branco: #ffffff;
+      --texto: #2c2c2c;
+      --texto-leve: #666666;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; color: var(--texto); background: var(--branco); line-height: 1.6; }
+
+    nav.main-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      width: 100%; background: rgba(26,46,32,0.95); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,169,110,0.15);
+      border-radius: 0; padding: 0 1.5rem; height: 58px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+    .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logo-img { display: flex; align-items: center; flex-shrink: 0; }
+    .nav-logo-pic { height: 36px; width: auto; object-fit: contain; }
+    .nav-text-block { display: flex; flex-direction: column; line-height: 1.2; border-left: 1px solid rgba(201,169,110,0.2); padding-left: 0.75rem; }
+    .nav-name { font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--creme); letter-spacing: 0.06em; }
+    .nav-sub { font-family: 'Jost', sans-serif; font-size: 0.62rem; font-weight: 300; color: rgba(201,169,110,0.6); letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+    .nav-cta { background: var(--gold); color: var(--verde); font-size: 0.75rem; font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 2rem; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.2s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--gold-light); }
+    .nav-center { display: flex; align-items: center; gap: 0.6rem; position: absolute; left: 50%; transform: translateX(-50%); }
+    .nav-badge { font-size: 0.72rem; font-weight: 500; color: var(--gold); background: rgba(201,169,110,0.1); border: 1px solid rgba(201,169,110,0.25); padding: 0.25rem 0.9rem; border-radius: 2rem; letter-spacing: 0.06em; white-space: nowrap; }
+    .nav-dot { color: rgba(247,243,237,0.2); font-size: 0.8rem; }
+    .nav-info { font-size: 0.7rem; color: rgba(247,243,237,0.35); letter-spacing: 0.06em; white-space: nowrap; }
+    @media (max-width: 640px) { .nav-center { display: none; } }
+
+    .fab-stack { position: fixed; right: 1.5rem; bottom: 2rem; z-index: 200; display: flex; flex-direction: column; align-items: flex-end; gap: 0.7rem; }
+    .fab-wa { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: #25D366; border-radius: 50%; box-shadow: 0 6px 24px rgba(37,211,102,0.4); transition: all 0.2s; text-decoration: none; }
+    .fab-wa:hover { background: #20b858; transform: scale(1.08); }
+    .fab-wa svg { width: 28px; height: 28px; fill: #fff; }
+
+    .hero { background: var(--verde); padding: 8rem 2rem 5rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%); pointer-events: none; }
+    .hero-eyebrow { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,169,110,0.3); padding: 0.4rem 1.2rem; border-radius: 2rem; margin-bottom: 2rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem,6vw,4rem); font-weight: 600; color: var(--creme); line-height: 1.15; max-width: 800px; margin: 0 auto 1.5rem; }
+    .hero h1 em { color: var(--gold); font-style: italic; }
+    .hero-sub { font-size: 1.05rem; color: rgba(247,243,237,0.7); max-width: 560px; margin: 0 auto 2.5rem; font-weight: 300; }
+    .hero-preco { display: inline-flex; align-items: center; gap: 0.8rem; background: rgba(201,169,110,0.12); border: 1px solid rgba(201,169,110,0.25); border-radius: 0.5rem; padding: 0.8rem 1.8rem; margin-bottom: 2rem; }
+    .hero-preco-label { font-size: 0.8rem; color: rgba(247,243,237,0.6); font-weight: 400; letter-spacing: 0.05em; }
+    .hero-preco-valor { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--gold); }
+    .btn-wa { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: #fff; font-size: 1rem; font-weight: 600; padding: 1rem 2.5rem; border-radius: 3rem; text-decoration: none; letter-spacing: 0.03em; transition: all 0.2s; box-shadow: 0 8px 32px rgba(37,211,102,0.25); }
+    .btn-wa:hover { background: #20b858; transform: translateY(-2px); }
+    .btn-wa svg { width: 22px; height: 22px; fill: #fff; }
+    .hero-modalities { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+    .hero-mod { font-size: 0.8rem; color: rgba(247,243,237,0.5); }
+    .hero-divider { width: 1px; height: 14px; background: rgba(201,169,110,0.2); }
+
+    section { padding: 5rem 2rem; }
+    .container { max-width: 860px; margin: 0 auto; }
+    .section-eyebrow { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 600; color: var(--verde); line-height: 1.2; margin-bottom: 1.5rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-body { font-size: 1rem; color: var(--texto-leve); line-height: 1.8; }
+
+    .problema { background: var(--creme); }
+    .problema-lista { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; margin: 2rem 0; }
+    .problema-item { background: var(--branco); border: 1px solid var(--creme-dark); border-radius: 0.75rem; padding: 1.2rem 1.4rem; font-size: 0.9rem; color: var(--texto-leve); display: flex; align-items: flex-start; gap: 0.8rem; }
+    .problema-item::before { content: '×'; font-size: 1.2rem; color: #c0392b; font-weight: 700; flex-shrink: 0; }
+    .problema-frase { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: var(--verde); border-left: 3px solid var(--gold); padding-left: 1.2rem; margin-top: 2rem; line-height: 1.5; }
+
+    .nutrologia { background: var(--branco); }
+    .diferenca-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+    .diferenca-card { background: var(--creme); border-radius: 1rem; padding: 1.8rem; border-top: 3px solid var(--gold); }
+    .diferenca-titulo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--verde); margin-bottom: 0.5rem; }
+    .diferenca-texto { font-size: 0.9rem; color: var(--texto-leve); line-height: 1.7; }
+
+    .como-funciona { background: var(--verde); }
+    .como-funciona .section-title { color: var(--creme); }
+    .passos { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 2rem; margin-top: 3rem; }
+    .passo { text-align: center; }
+    .passo-num { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); margin: 0 auto 1.2rem; }
+    .passo-titulo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--creme); margin-bottom: 0.6rem; }
+    .passo-texto { font-size: 0.9rem; color: rgba(247,243,237,0.6); line-height: 1.7; }
+
+    .para-quem { background: var(--creme); }
+    .lista-check { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; margin-top: 2rem; }
+    .lista-check li { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.95rem; color: var(--texto); }
+    .lista-check li::before { content: '✓'; color: var(--gold); font-weight: 700; font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+    .avaliacoes { background: var(--branco); }
+    .avaliacoes-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .avg-score { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 600; color: var(--verde); line-height: 1; }
+    .avg-info { display: flex; flex-direction: column; gap: 0.2rem; }
+    .avg-stars { color: var(--gold); font-size: 1.2rem; letter-spacing: 2px; }
+    .avg-source { font-size: 0.8rem; color: var(--texto-leve); letter-spacing: 0.05em; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1.5rem; }
+    .review-card { background: var(--creme); border-radius: 1rem; padding: 1.8rem; border-left: 3px solid var(--gold); }
+    .review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .review-texto { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--texto); line-height: 1.7; margin-bottom: 1rem; }
+    .review-autor { font-size: 0.8rem; font-weight: 600; color: var(--texto-leve); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .medico { background: var(--creme); }
+    .medico-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .medico-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--verde); border-left: 3px solid var(--gold); padding-left: 1.2rem; margin: 1.5rem 0; line-height: 1.6; }
+    .medico-credenciais { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+    .medico-credenciais li { font-size: 0.88rem; color: var(--texto-leve); display: flex; align-items: center; gap: 0.6rem; }
+    .medico-credenciais li span { color: var(--gold); }
+    .medico-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.8rem; color: var(--verde); font-size: 0.88rem; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; border-bottom: 1px solid var(--gold); padding-bottom: 0.2rem; transition: color 0.2s; }
+    .medico-link:hover { color: var(--gold); }
+    .medico-foto-box { background: var(--verde); border-radius: 1.5rem; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .medico-foto-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+
+    .faq { background: var(--branco); }
+    .faq-lista { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; border: 1px solid var(--creme-dark); border-radius: 1rem; overflow: hidden; }
+    .faq-item { border-bottom: 1px solid var(--creme-dark); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-pergunta { width: 100%; background: none; border: none; padding: 1.4rem 1.8rem; text-align: left; font-family: 'Jost', sans-serif; font-size: 0.95rem; font-weight: 500; color: var(--texto); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+    .faq-pergunta:hover { background: var(--creme); }
+    .faq-pergunta .icon { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1rem; transition: transform 0.2s; }
+    .faq-item.open .faq-pergunta .icon { transform: rotate(45deg); }
+    .faq-resposta { display: none; padding: 0 1.8rem 1.4rem; font-size: 0.9rem; color: var(--texto-leve); line-height: 1.8; }
+    .faq-item.open .faq-resposta { display: block; }
+
+    .cta-final { background: var(--verde); text-align: center; padding: 6rem 2rem; }
+    .cta-final .section-eyebrow { color: var(--gold); }
+    .cta-final-titulo { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,5vw,3.2rem); font-weight: 600; color: var(--creme); line-height: 1.2; max-width: 600px; margin: 0 auto 1rem; }
+    .cta-final-titulo em { color: var(--gold); font-style: italic; }
+    .cta-final-sub { font-size: 0.95rem; color: rgba(247,243,237,0.6); margin-bottom: 2rem; font-weight: 300; }
+    .cta-final-preco { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(201,169,110,0.7); margin-bottom: 0.4rem; letter-spacing: 0.05em; }
+    .cta-final-valor { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--gold); margin-bottom: 2rem; }
+    .cta-modalities { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.8rem; flex-wrap: wrap; }
+    .cta-mod { font-size: 0.82rem; color: rgba(247,243,237,0.5); }
+
+    footer { background: #111a13; padding: 2.5rem 2rem; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); display: block; margin-bottom: 0.5rem; }
+    .footer-crm { font-size: 0.75rem; color: rgba(255,255,255,0.25); margin-bottom: 1rem; }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.15); }
+
+    @media (max-width: 768px) {
+      .medico-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .medico-foto-box { max-width: 280px; margin: 0 auto; }
+      .hero-preco { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="main-nav">
+  <div class="nav-left">
+    <span class="nav-logo-img">
+      <img src="./logo.png" alt="Dr. Alceu Muritiba" class="nav-logo-pic" />
+    </span>
+    <div class="nav-text-block">
+      <span class="nav-name">Dr. Alceu Muritiba</span>
+      <span class="nav-sub">Equilíbrio Hormonal & Medicina Personalizada</span>
+    </div>
+  </div>
+  <div class="nav-center">
+    <span class="nav-badge">Programa Equilíbrio Hormonal</span>
+    <span class="nav-dot">·</span>
+    <span class="nav-info">Presencial &amp; Telemedicina</span>
+  </div>
+  <div class="nav-right">
+    <a href="https://wa.me/557491387424?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20Programa%20Equilíbrio%20Hormonal." class="nav-cta">Agendar</a>
+  </div>
+</nav>
+
+<div class="fab-stack">
+  <a href="https://wa.me/557491387424?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20Programa%20Equilíbrio%20Hormonal." class="fab-wa">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Programa Equilíbrio Hormonal · Nutrologia</span>
+    <h1>Seus hormônios<br>controlam tudo.<br><em>Equilibre-os.</em></h1>
+    <p class="hero-sub">Avaliação hormonal completa com acompanhamento médico individualizado — disposição real, bem-estar e qualidade de vida em todas as fases.</p>
+    <div class="hero-preco">
+      <span class="hero-preco-label">Consulta a partir de</span>
+      <span class="hero-preco-valor">R$ 699,00</span>
+    </div><br>
+    <a href="https://wa.me/557491387424?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20Programa%20Equilíbrio%20Hormonal." class="btn-wa">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Agendar via WhatsApp
+    </a>
+    <div class="hero-modalities">
+      <span class="hero-mod">🏥 Presencial · Salvador, BA</span>
+      <div class="hero-divider"></div>
+      <span class="hero-mod">💻 Telemedicina · Todo o Brasil</span>
+    </div>
+  </div>
+</section>
+
+<section class="problema">
+  <div class="container">
+    <span class="section-eyebrow">O Problema</span>
+    <h2 class="section-title">O que acontece quando os hormônios<br><em>saem do equilíbrio</em></h2>
+    <p class="section-body">Ganho de peso sem explicação, cansaço constante, humor instável, libido baixa... muitas vezes a causa é hormonal — e ninguém investigou de verdade.</p>
+    <div class="problema-lista">
+      <div class="problema-item">Cansaço e falta de disposição persistentes</div>
+      <div class="problema-item">Ganho de peso sem causa aparente</div>
+      <div class="problema-item">Humor instável e irritabilidade</div>
+      <div class="problema-item">Libido reduzida</div>
+      <div class="problema-item">Insônia e sono não reparador</div>
+      <div class="problema-item">Fogachos e suores noturnos</div>
+      <div class="problema-item">Queda de cabelo e ressecamento</div>
+      <div class="problema-item">TPM intensa com impacto na rotina</div>
+    </div>
+    <p class="problema-frase">"Não é estresse.<br>É desequilíbrio hormonal."</p>
+  </div>
+</section>
+
+<section class="nutrologia">
+  <div class="container">
+    <span class="section-eyebrow">Por que Nutrologia</span>
+    <h2 class="section-title">A nutrologia olha<br><em>para o todo</em></h2>
+    <p class="section-body">Hormônios não funcionam isolados. O nutrólogo avalia alimentação, metabolismo e equilíbrio hormonal de forma integrada — não apenas um número fora do intervalo.</p>
+    <div class="diferenca-grid">
+      <div class="diferenca-card">
+        <div class="diferenca-titulo">Avaliação Completa</div>
+        <div class="diferenca-texto">Dosagem de hormônios, composição corporal, sono, nutrição e histórico clínico — tudo em uma visão integrada.</div>
+      </div>
+      <div class="diferenca-card">
+        <div class="diferenca-titulo">Protocolo Personalizado</div>
+        <div class="diferenca-texto">Ajustes nutricionais, suplementação e, quando necessário, terapia hormonal com indicação médica precisa.</div>
+      </div>
+      <div class="diferenca-card">
+        <div class="diferenca-titulo">Otimização Contínua</div>
+        <div class="diferenca-texto">Ajustes progressivos baseados em exames e resposta clínica — não um protocolo estático.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="como-funciona">
+  <div class="container">
+    <span class="section-eyebrow">Como Funciona</span>
+    <h2 class="section-title">3 passos para<br><em>o equilíbrio real</em></h2>
+    <div class="passos">
+      <div class="passo">
+        <div class="passo-num">1</div>
+        <div class="passo-titulo">Avaliação Hormonal</div>
+        <div class="passo-texto">Dosagem completa de hormônios, exames laboratoriais, composição corporal e anamnese detalhada.</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num">2</div>
+        <div class="passo-titulo">Protocolo de Otimização</div>
+        <div class="passo-texto">Estratégia individualizada: alimentação, suplementação e, se indicado, reposição hormonal.</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num">3</div>
+        <div class="passo-titulo">Acompanhamento Ativo</div>
+        <div class="passo-texto">Retornos regulares, ajuste de doses e monitoramento de sintomas até o equilíbrio real e sustentável.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="para-quem">
+  <div class="container">
+    <span class="section-eyebrow">Para Quem É</span>
+    <h2 class="section-title">Esse programa<br><em>é para você se...</em></h2>
+    <ul class="lista-check">
+      <li>Você está na menopausa ou perimenopausa</li>
+      <li>Sente sintomas de andropausa (homens a partir de 40)</li>
+      <li>Tem TPM intensa com impacto na sua vida</li>
+      <li>Cansaço persistente sem causa identificada nos exames comuns</li>
+      <li>Ganho de peso relacionado a alterações hormonais</li>
+      <li>Libido baixa e alterações de humor frequentes</li>
+      <li>Quer otimizar saúde hormonal de forma preventiva</li>
+      <li>Busca atendimento por telemedicina em qualquer estado do Brasil</li>
+    </ul>
+  </div>
+</section>
+
+<section class="avaliacoes">
+  <div class="container">
+    <span class="section-eyebrow">O que dizem os pacientes</span>
+    <h2 class="section-title">Avaliações <em>reais</em></h2>
+    <div class="avaliacoes-header">
+      <div class="avg-score">5,0</div>
+      <div class="avg-info">
+        <div class="avg-stars">★★★★★</div>
+        <div class="avg-source">29 avaliações · Doctoralia</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-texto">"Ele é fantástico! Consegue deixar nosso objetivo leve! Além de muito simpático, paciente e detalhista! Super indico!"</div>
+        <div class="review-autor">Valesca · Teleconsulta</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-texto">"Médico atencioso e demonstrou conhecimento e segurança no assunto. Saí satisfeita e segura para prosseguir com o tratamento."</div>
+        <div class="review-autor">Rouze L. · Saúde Hormonal</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-texto">"Muito atencioso, parabéns pela dedicação em compreender a necessidade do paciente e prescrever individualmente."</div>
+        <div class="review-autor">Wilson R. · Nutrologia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="medico">
+  <div class="container">
+    <div class="medico-inner">
+      <div class="medico-texto">
+        <span class="section-eyebrow">O Médico</span>
+        <h2 class="section-title">Dr. Alceu<br><em>Muritiba</em></h2>
+        <div class="medico-quote">"Cuidar do equilíbrio hormonal é cuidar da vida em todas as suas fases."</div>
+        <ul class="medico-credenciais">
+          <li><span>✦</span> Graduação em Medicina · Escola Baiana de Medicina e Saúde Pública (2012)</li>
+          <li><span>✦</span> Especialização em Nutrologia · Beneficência Portuguesa / GANEP São Paulo</li>
+          <li><span>✦</span> Saúde Nutricional Integral · GANEP</li>
+          <li><span>✦</span> EMAS 2025 · European Menopause &amp; Andropause Society · Valencia</li>
+          <li><span>✦</span> CRM-BA 25031</li>
+        </ul>
+        <a href="https://wa.me/557491387424?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20Programa%20Equilíbrio%20Hormonal." class="medico-link">Agendar consulta via WhatsApp →</a>
+      </div>
+      <div class="medico-foto-box">
+        <img src="./alceu.jpeg" alt="Dr. Alceu Muritiba — Nutrólogo Salvador" class="medico-foto-img" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <span class="section-eyebrow">Dúvidas Frequentes</span>
+    <h2 class="section-title">Perguntas <em>frequentes</em></h2>
+    <div class="faq-lista">
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">O que é terapia hormonal e quando é indicada?<span class="icon">+</span></button>
+        <div class="faq-resposta">A terapia de reposição hormonal (TRH) é indicada quando há deficiência hormonal confirmada por exames e sintomas clínicos. A decisão é sempre individualizada — não existe protocolo genérico. O Dr. Alceu avalia riscos e benefícios para cada paciente.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">Preciso levar exames prévios para a consulta?<span class="icon">+</span></button>
+        <div class="faq-resposta">Não é obrigatório, mas se você já tiver exames recentes (últimos 6 meses), é útil levá-los. Caso necessário, o Dr. Alceu solicitará uma bateria completa de exames hormonais na própria consulta.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">Andropausa existe de verdade?<span class="icon">+</span></button>
+        <div class="faq-resposta">Sim. A redução progressiva de testosterona em homens a partir dos 40 anos é real e pode causar cansaço, perda muscular, baixa libido e alterações de humor. O diagnóstico e acompanhamento médico fazem diferença significativa na qualidade de vida.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">Atende por telemedicina?<span class="icon">+</span></button>
+        <div class="faq-resposta">Sim. O Dr. Alceu atende presencialmente em Salvador, BA e por telemedicina para todo o Brasil. O atendimento online tem a mesma qualidade e profundidade da consulta presencial.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">Preciso de encaminhamento médico?<span class="icon">+</span></button>
+        <div class="faq-resposta">Não. Você pode agendar diretamente via WhatsApp sem necessidade de encaminhamento.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <span class="section-eyebrow">Agende sua Consulta</span>
+    <h2 class="cta-final-titulo">Seu equilíbrio<br><em>começa aqui.</em></h2>
+    <p class="cta-final-sub">Atendimento presencial em Salvador ou telemedicina para todo o Brasil.<br>Resposta em até 2h úteis.</p>
+    <div class="cta-final-preco">Consulta a partir de</div>
+    <div class="cta-final-valor">R$ 699,00</div>
+    <a href="https://wa.me/557491387424?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20Programa%20Equilíbrio%20Hormonal." class="btn-wa">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Agendar via WhatsApp
+    </a>
+    <div class="cta-modalities">
+      <span class="cta-mod">🏥 Presencial · Salvador, BA</span>
+      <span style="color:rgba(201,169,110,0.2)">·</span>
+      <span class="cta-mod">💻 Telemedicina · Todo o Brasil</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Dr. Alceu Muritiba</span>
+  <div class="footer-crm">Nutrólogo · CRM-BA 25031 · Salvador, BA</div>
+  <div class="footer-copy">© 2026 Dr. Alceu Muritiba · Todos os direitos reservados</div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
