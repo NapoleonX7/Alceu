@@ -674,15 +674,12 @@
       overflow: hidden;
     }
 
-    .medico-foto-placeholder {
-      text-align: center;
-      color: rgba(201,169,110,0.4);
-    }
-
-    .medico-foto-placeholder p {
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-      font-family: 'Jost', sans-serif;
+    .medico-foto-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
     }
 
     /* ── FAQ ── */
@@ -882,7 +879,7 @@
     <span class="nav-info">Presencial & Telemedicina</span>
   </div>
   <div class="nav-right">
-    <a href="https://dralceumuritiba.com.br" class="nav-site">↗ Site oficial</a>
+    <a href="https://dralceumuritiba.com.br" class="nav-site">🌐 Site oficial</a>
     <a href="https://wa.me/557491387424?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20para%20o%20Programa%20Emagrecimento." class="nav-cta">Agendar</a>
   </div>
 </nav>
@@ -1053,10 +1050,7 @@
         <a href="https://dralceumuritiba.com.br" class="medico-link">Conheça o trabalho completo →</a>
       </div>
       <div class="medico-foto-box">
-        <div class="medico-foto-placeholder">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <p style="color:rgba(201,169,110,0.3);font-size:0.75rem;">Foto do Dr. Alceu</p>
-        </div>
+        <img src="./alceu.jpeg" alt="Dr. Alceu Muritiba — Nutrólogo Salvador" class="medico-foto-img" />
       </div>
     </div>
   </div>
