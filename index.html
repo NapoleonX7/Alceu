@@ -381,7 +381,8 @@
     from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0);    }
   }
-  .planos-card { padding: 2.5rem 2rem; border: 0.5px solid rgba(201,169,110,0.15); position: relative; overflow: hidden; transition: background 0.3s; opacity: 0; }
+  .planos-card { padding: 2.5rem 2rem; border: 0.5px solid rgba(201,169,110,0.15); position: relative; overflow: hidden; transition: background 0.3s; }
+  .planos-card.will-animate { opacity: 0; }
   .planos-card.visible { animation: planosFadeUp 0.6s ease forwards; }
   .planos-card:hover { background: rgba(201,169,110,0.06); }
   .planos-card::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--gold); transition: height 0.4s var(--ease); }
@@ -883,6 +884,7 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.planos-card').forEach((card, i) => {
+    card.classList.add('will-animate');
     card.style.animationDelay = (i * 90) + 'ms';
     cardObserver.observe(card);
   });
