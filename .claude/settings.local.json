@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($projectsDir = \"$env:USERPROFILE\\\\.claude\\\\projects\"; if \\(Test-Path $projectsDir\\) { Get-ChildItem $projectsDir -Directory | Select-Object -First 30 | ForEach-Object { $_.FullName } } else { \"Directory not found: $projectsDir\" })",
+      "Bash(python3 -c ' *)",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\.claude\\\\projects\\\\\" | Sort-Object LastWriteTime -Descending | Select-Object -First 20 | Format-Table Name, LastWriteTime)",
+      "Bash(node \"C:\\\\Users\\\\Dr Alceu Muritiba\\\\AppData\\\\Local\\\\Temp\\\\rebuild_lifestyle.js\")",
+      "PowerShell(node \"C:\\\\Users\\\\Dr Alceu Muritiba\\\\AppData\\\\Local\\\\Temp\\\\update_sobre.js\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(python -c ' *)",
+      "Bash(ls \"C:\\\\Users\\\\Dr Alceu Muritiba\\\\OneDrive\\\\Desktop\\\\fotos alceu\")",
+      "WebFetch(domain:www.whois.com)",
+      "WebFetch(domain:rdap.verisign.com)",
+      "WebFetch(domain:who.is)",
+      "WebFetch(domain:lookup.icann.org)",
+      "Bash(whois dralceumuritiba.com)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(nslookup dralceumuritiba.com.br 8.8.8.8)",
+      "Bash(nslookup dralceumuritibacombr.netlify.app 8.8.8.8)",
+      "Bash(nslookup dralceumuritiba.com.br 1.1.1.1)",
+      "Bash(nslookup -type=CNAME dralceumuritiba.com.br 1.1.1.1)",
+      "Bash(nslookup dralceumuritiba.com.br a.auto.dns.br)",
+      "Bash(nslookup -type=CNAME dralceumuritiba.com.br a.auto.dns.br)",
+      "Bash(nslookup -type=A dralceumuritiba.com.br a.auto.dns.br)",
+      "Bash(nslookup -type=ANY dralceumuritiba.com.br a.auto.dns.br)",
+      "Bash(nslookup -type=CNAME dralceumuritiba.com.br 8.8.8.8)",
+      "Bash(nslookup -type=A dralceumuritiba.com.br 8.8.8.8)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(node proposta.js)",
+      "Bash(npm install *)",
+      "Bash(node proposta_programas.js)",
+      "Bash(cp 'C:/Users/Dr Alceu Muritiba/OneDrive/Desktop/CTA/emagrecimento/logo.png' 'C:/Users/Dr Alceu Muritiba/OneDrive/Desktop/CTA/__TRACKED_VAR__/logo.png')",
+      "Bash(cp 'C:/Users/Dr Alceu Muritiba/OneDrive/Desktop/CTA/emagrecimento/alceu.jpeg' 'C:/Users/Dr Alceu Muritiba/OneDrive/Desktop/CTA/__TRACKED_VAR__/alceu.jpeg')"
+    ]
+  }
+}
