@@ -373,14 +373,23 @@
   .planos-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1rem; }
   .planos-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: white; font-weight: 300; }
   .planos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 0.5px solid rgba(201,169,110,0.2); }
-  .planos-card { padding: 2.5rem 2rem; border: 0.5px solid rgba(201,169,110,0.15); position: relative; overflow: hidden; transition: background 0.3s; }
+  @keyframes planosFadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+  .planos-card { padding: 2.5rem 2rem; border: 0.5px solid rgba(201,169,110,0.15); position: relative; overflow: hidden; transition: background 0.3s; opacity: 0; }
+  .planos-card.visible { animation: planosFadeUp 0.6s ease forwards; }
   .planos-card:hover { background: rgba(201,169,110,0.06); }
+  .planos-card::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 0; background: var(--gold); transition: height 0.4s var(--ease); }
+  .planos-card:hover::before { height: 100%; }
   .planos-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 0.5px; background: var(--gold); transition: width 0.5s var(--ease); }
   .planos-card:hover::after { width: 100%; }
   .planos-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: rgba(201,169,110,0.25); line-height: 1; margin-bottom: 1.25rem; transition: color 0.3s; }
   .planos-card:hover .planos-num { color: var(--gold); }
   .planos-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: white; margin-bottom: 0.75rem; }
   .planos-desc { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+  .planos-ver { display: inline-flex; align-items: center; gap: .35rem; font-size: 0.68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); text-decoration: none; margin-top: 1.4rem; opacity: 0; transition: opacity 0.25s ease, gap 0.2s ease; }
+  .planos-card:hover .planos-ver { opacity: 1; gap: .55rem; }
 
   @media (max-width: 1024px) { .planos-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 768px) { .planos-grid { grid-template-columns: 1fr; } }
@@ -668,46 +677,54 @@
       <span class="planos-label reveal">Nossos Programas</span>
       <h2 class="planos-title reveal d1">Planos de Acompanhamento</h2>
     </div>
-    <div class="planos-grid reveal d2">
+    <div class="planos-grid">
       <div class="planos-card">
         <div class="planos-num">01</div>
         <h3 class="planos-name">Emagrecimento</h3>
         <p class="planos-desc">Acompanhamento médico contínuo com foco em emagrecimento saudável, sustentável e prevenção do efeito sanfona.</p>
+        <a href="/emagrecimento" class="planos-ver">Ver programa →</a>
       </div>
       <div class="planos-card">
         <div class="planos-num">02</div>
         <h3 class="planos-name">Equilíbrio Hormonal</h3>
         <p class="planos-desc">Plano voltado para otimização hormonal, bem-estar, disposição, composição corporal e qualidade de vida.</p>
+        <a href="/equilibrio-hormonal" class="planos-ver">Ver programa →</a>
       </div>
       <div class="planos-card">
         <div class="planos-num">03</div>
         <h3 class="planos-name">Hipertrofia &amp; Performance</h3>
         <p class="planos-desc">Plano estruturado para ganho de massa muscular, melhora da performance física e otimização corporal.</p>
+        <a href="/hipertrofia" class="planos-ver">Ver programa →</a>
       </div>
       <div class="planos-card">
         <div class="planos-num">04</div>
         <h3 class="planos-name">Longevidade</h3>
         <p class="planos-desc">Acompanhamento focado em envelhecimento saudável, prevenção, biomarcadores e qualidade de vida a longo prazo.</p>
+        <a href="/longevidade" class="planos-ver">Ver programa →</a>
       </div>
       <div class="planos-card">
         <div class="planos-num">05</div>
         <h3 class="planos-name">Reset Metabólico</h3>
         <p class="planos-desc">Estratégia estruturada para reorganização metabólica, melhora da composição corporal e recuperação da saúde sistêmica.</p>
+        <a href="/reset-metabolico" class="planos-ver">Ver programa →</a>
       </div>
       <div class="planos-card">
         <div class="planos-num">06</div>
         <h3 class="planos-name">NeuroBalance</h3>
         <p class="planos-desc">Abordagem direcionada ao equilíbrio neuroquímico, sono, foco, humor, estresse e saúde mental integrada.</p>
+        <a href="/neurobalance" class="planos-ver">Ver programa →</a>
       </div>
       <div class="planos-card">
         <div class="planos-num">07</div>
         <h3 class="planos-name">Reabilitação Muscular</h3>
         <p class="planos-desc">Estratégia personalizada para recuperação de massa muscular, força, funcionalidade e desempenho físico.</p>
+        <a href="/reabilitacao-muscular" class="planos-ver">Ver programa →</a>
       </div>
       <div class="planos-card">
         <div class="planos-num">08</div>
         <h3 class="planos-name">Serena</h3>
         <p class="planos-desc">Acompanhamento personalizado em medicina canabinoide, com foco em equilíbrio, qualidade de vida, sono, dor, ansiedade e bem-estar global.</p>
+        <a href="/serena" class="planos-ver">Ver programa →</a>
       </div>
     </div>
   </div>
@@ -850,6 +867,17 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Planos cards — staggered fade-up
+  const cardObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); cardObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.planos-card').forEach((card, i) => {
+    card.style.animationDelay = (i * 90) + 'ms';
+    cardObserver.observe(card);
+  });
 
   // Agenda iframe auto-resize
   function resizeAgendaFrame(frame) {
