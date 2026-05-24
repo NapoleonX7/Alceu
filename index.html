@@ -55,7 +55,8 @@
   .nav-logo-text { display: flex; flex-direction: column; }
   .nav-logo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 500; color: var(--gold); letter-spacing: 0.05em; line-height: 1.15; }
   .nav-logo-spec { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 400; }
-  @media (max-width: 768px) { .nav-logo-text { display: none; } .nav-logo-img { height: 36px; } }
+  @media (max-width: 768px) { .nav-logo-img { height: 34px; } .nav-logo-name { font-size: .88rem; } .nav-logo-spec { font-size: .5rem; letter-spacing: .12em; } }
+  @media (max-width: 380px) { .nav-logo-spec { display: none; } }
 
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.75); font-weight: 400; transition: color 0.3s; }
