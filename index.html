@@ -397,7 +397,10 @@
   .planos-card:hover .planos-ver { opacity: 1; gap: .55rem; }
 
   @media (max-width: 1024px) { .planos-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .planos-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 768px) {
+    .planos-grid { grid-template-columns: 1fr; }
+    .planos-ver { opacity: 1; }
+  }
 </style>
 </head>
 <body>
@@ -882,7 +885,7 @@
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); cardObserver.unobserve(e.target); }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
   document.querySelectorAll('.planos-card').forEach((card, i) => {
     card.classList.add('will-animate');
     card.style.animationDelay = (i * 90) + 'ms';
